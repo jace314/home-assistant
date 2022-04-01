@@ -1,0 +1,12 @@
+tts_test:
+  alias: TTS Blood Sugar
+  mode: single
+  icon: mdi:ab-testing
+  sequence:
+  - service: notify.alexa_media
+    data:
+      message: Meghanns blood glucose level is {{ states('sensor.dexcom_meghannengland_glucose_value')
+        }} and is {{ states('sensor.dexcom_meghannengland_glucose_trend') }}
+      target: media_player.jace_echo_flex
+      data:
+        type: tts

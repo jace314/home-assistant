@@ -1,0 +1,78 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Custom Sidebar
+panel_custom:
+  - name: ha_server_con
+    sidebar_title: ServerControl
+    sidebar_icon: mdi:cog-transfer
+    js_url: /api/hassio/app/entrypoint.js
+    url_path: 'config/server_control'
+    embed_iframe: true
+    require_admin: true
+    config:
+      ingress: core_configurator
+
+# Includes
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+binary_sensor: !include_dir_merge_list binary_sensor/
+light: !include lights.yaml
+group: !include_dir_merge_named groups/
+sensor: !include_dir_merge_list sensors/
+camera: !include_dir_merge_named cameras/
+zone: !include zones.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+media_source:
+
+alarm_control_panel:
+  - platform: manual
+
+# Database
+recorder:
+  purge_keep_days: 5
+  commit_interval: 15
+  db_url: !secret mariadb_url
+  exclude:
+    domains:
+      - automation
+      - updater
+      - media_player
+      - script    
+
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret mariadb_user
+  password: !secret mariadb_pass
+  max_retries: 3
+  default_measurement: state
+  include:
+    domains:
+      - alarm_control_panel
+      - climate
+      - sensor
+      - light
+
+# http
+http: 
+  use_x_forwarded_for: true 
+  trusted_proxies: 
+    - 172.30.33.0/24
+    - 127.0.0.1
+
+# Integrations
+sonoff:
+  username: !secret sonoff_user
+  password: !secret sonoff_pass
+  reload: always
+
+schluter:
+  username: !secret schluter_email
+  password: !secret schluter_pass

@@ -1,0 +1,387 @@
+- id: '1647740106539'
+  alias: Bathroom Blind Open
+  description: ''
+  trigger:
+  - device_id: 4a98b9f07ae8642eba501ae157dcaff0
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: open
+  condition: []
+  action:
+  - device_id: 4658ba1850b0e1ef12c15401c314e5b7
+    domain: cover
+    entity_id: cover.ikea_blind_window_covering
+    type: set_position
+    position: 60
+  mode: single
+- id: '1647740156956'
+  alias: Bathroom Blind Close
+  description: ''
+  trigger:
+  - device_id: 4a98b9f07ae8642eba501ae157dcaff0
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: close
+  condition: []
+  action:
+  - device_id: 4658ba1850b0e1ef12c15401c314e5b7
+    domain: cover
+    entity_id: cover.ikea_blind_window_covering
+    type: set_position
+    position: 0
+  mode: single
+- id: '1647740574417'
+  alias: Hutch Lights On/Off
+  description: ''
+  trigger:
+  - device_id: bd9102b8a2141ab0d813a56c9dd25420
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: turn_on
+  condition: []
+  action:
+  - type: toggle
+    device_id: e5c2bc150613013fc017fdec4e88859d
+    entity_id: switch.ikea_outlet_on_off
+    domain: switch
+  mode: single
+- id: '1647823096364'
+  alias: Master 1 Ceiling
+  description: ''
+  trigger:
+  - device_id: 87808d9472f83f59a678dcd45bb29f31
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 1
+    unique_id: 5f06e956-291d-4fef-a963-b0ab91efaa2d
+  condition: []
+  action:
+  - service: light.toggle
+    data:
+      transition: 2
+      brightness_pct: 70
+      color_temp: 260
+    target:
+      entity_id: light.master_ceiling
+  mode: single
+- id: '1647824029868'
+  alias: Master 2 Lamp
+  description: ''
+  trigger:
+  - device_id: 87808d9472f83f59a678dcd45bb29f31
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 2
+    unique_id: aef93b0c-f731-415f-9d54-1233ed8fff22
+  condition: []
+  action:
+  - service: light.toggle
+    data:
+      transition: 2
+      brightness_pct: 70
+      color_temp: 260
+    target:
+      device_id: 6189f32d54b166d80ec653bcea9ff4f5
+  mode: single
+- id: '1647824251067'
+  alias: Master 3 AC
+  description: ''
+  trigger:
+  - device_id: 87808d9472f83f59a678dcd45bb29f31
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 3
+    unique_id: 21bf4ade-71a4-4840-b167-3cb2b035f19b
+  condition: []
+  action:
+  - service: switch.toggle
+    data: {}
+    target:
+      device_id: 4b50a6602eb6c7028efa4cb978108c3f
+  mode: single
+- id: '1647830747131'
+  alias: Basement On
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 8daec42923257db4e4e5a29d17ab1806
+    entity_id: switch.basement_tp_switch
+    domain: switch
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      color_temp: 315
+      brightness_pct: 100
+    target:
+      device_id:
+      - e2c57d7a1f2dd7dff2280769680471db
+      - d532c6e5e10cec4981bc8bfc84195495
+      - 73154c5d5c1a8394de2dcf01b7f0ff3b
+      - a27b742da5f12feb52cb4b654196ea17
+  mode: single
+- id: '1647830838415'
+  alias: Basement Off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_off
+    device_id: 8daec42923257db4e4e5a29d17ab1806
+    entity_id: switch.basement_tp_switch
+    domain: switch
+  condition: []
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      device_id:
+      - e2c57d7a1f2dd7dff2280769680471db
+      - d532c6e5e10cec4981bc8bfc84195495
+      - 73154c5d5c1a8394de2dcf01b7f0ff3b
+      - a27b742da5f12feb52cb4b654196ea17
+  mode: single
+- id: '1647831098824'
+  alias: Living Fans Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:15:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id:
+      - 4091b1e5500f4baa73a43f1383679145
+      - d38ec57754412930d56968d2a71ea8c5
+  mode: single
+- id: '1647831192671'
+  alias: Shelf Lights Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:00:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id:
+      - b355515cc044c8fef8a5d3b3a0c258e9
+      - 040e6ba9db6310489074e48dd7ec3fbb
+  mode: single
+- id: '1647832095897'
+  alias: Master 4 Off
+  description: ''
+  trigger:
+  - device_id: 87808d9472f83f59a678dcd45bb29f31
+    domain: hue
+    platform: device
+    type: initial_press
+    subtype: 4
+    unique_id: cb3da41d-d11d-4060-972d-c97273c35fec
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id: 4b50a6602eb6c7028efa4cb978108c3f
+  - service: light.turn_off
+    data: {}
+    target:
+      device_id: 6189f32d54b166d80ec653bcea9ff4f5
+      entity_id: light.master_ceiling
+  mode: single
+- id: '1647993437383'
+  alias: Outside Sunset
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '- 00:10:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 2778b11d88904a5e08d9e34990824eec
+    entity_id: light.hue_porch_ceiling
+    domain: light
+    brightness_pct: 15
+  - type: turn_on
+    device_id: cb6f29e7529aca81153a5afba3f1c0df
+    entity_id: switch.outside_1
+    domain: switch
+  mode: single
+- id: '1647994807482'
+  alias: Shelves and Cabinets
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition: []
+  action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      device_id:
+      - b355515cc044c8fef8a5d3b3a0c258e9
+      - 696d8752afd5852d9bf79d97bfcf626d
+      - 040e6ba9db6310489074e48dd7ec3fbb
+  mode: single
+- id: '1647994901395'
+  alias: Shelves Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 04:30:00
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id:
+      - b355515cc044c8fef8a5d3b3a0c258e9
+      - 040e6ba9db6310489074e48dd7ec3fbb
+  mode: single
+- id: '1647995027069'
+  alias: Outside Lights Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '22:30:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 2778b11d88904a5e08d9e34990824eec
+    entity_id: light.hue_porch_ceiling
+    domain: light
+  - type: turn_off
+    device_id: cb6f29e7529aca81153a5afba3f1c0df
+    entity_id: switch.outside_1
+    domain: switch
+  mode: single
+- id: '1648134976799'
+  alias: Kitchen Cabinets Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:00:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 696d8752afd5852d9bf79d97bfcf626d
+    entity_id: switch.kitchen_cabinets
+    domain: switch
+  mode: single
+- id: '1648166737081'
+  alias: Kids Closet On
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_779ded23
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: eb1367b64dfc8fc0dbc4dcd6a701decd
+    entity_id: light.hue_kids_closet
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1648167231002'
+  alias: Kids Closet Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.wyzesense_779ded23
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 3
+  condition: []
+  action:
+  - type: turn_off
+    device_id: eb1367b64dfc8fc0dbc4dcd6a701decd
+    entity_id: light.hue_kids_closet
+    domain: light
+  mode: single
+- id: '1648175655645'
+  alias: Stairs Motion
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 98f29d65ca15075681da1ac9dbf3f85d
+    entity_id: binary_sensor.hue_stairs_motion_motion
+    domain: binary_sensor
+  condition:
+  - condition: sun
+    after: sunset
+    after_offset: 00:10:00
+  action:
+  - type: turn_on
+    device_id: 02522e0509104c229d8fb9005d09ebfb
+    entity_id: light.hue_filament
+    domain: light
+    brightness_pct: 10
+  - service: light.turn_on
+    data:
+      color_temp: 240
+      brightness_pct: 50
+    target:
+      entity_id: light.stairs_spots
+  mode: single
+- id: '1648233937569'
+  alias: Stairs Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 98f29d65ca15075681da1ac9dbf3f85d
+    entity_id: binary_sensor.hue_stairs_motion_motion
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition:
+  - condition: device
+    type: is_on
+    device_id: 02522e0509104c229d8fb9005d09ebfb
+    entity_id: light.hue_filament
+    domain: light
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: light.stairs_spots
+      state: 'on'
+  action:
+  - service: light.turn_off
+    data: {}
+    target:
+      device_id: 02522e0509104c229d8fb9005d09ebfb
+      entity_id: light.stairs_spots
+  mode: single
+- id: '1648517951051'
+  alias: Ikea Remote Kitchen
+  description: ''
+  trigger:
+  - device_id: bd9102b8a2141ab0d813a56c9dd25420
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: dim_up
+  condition: []
+  action:
+  - type: toggle
+    device_id: a3f7f3f514da6a215b9280b1e22dd001
+    entity_id: light.hue_kitchen_ceiling
+    domain: light
+  mode: single

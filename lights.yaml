@@ -1,0 +1,22 @@
+- platform: group
+  name: Floor Lamp
+  unique_id: wiz-floor-12
+  entities:
+    - light.wiz_floor_1
+    - light.wiz_floor_2
+    
+- platform: group
+  name: Master Ceiling
+  unique_id: ecosmart-ceiling-123
+  entities:
+    - light.ecosmart_1_b08393fe_level_light_color_on_off
+    - light.ecosmart_2_5a3789fe_level_light_color_on_off
+    - light.ecosmart_3_6e9b9cfe_level_light_color_on_off
+    
+- platform: group
+  name: Stairs Spots
+  unique_id: zig-stair-spot-123
+  entities:
+    - light.stairs_spot_1_level_light_color_on_off
+    - light.stairs_spot_2_level_light_color_on_off
+    - light.stairs_spot_3_level_light_color_on_off

@@ -1,0 +1,23 @@
+- name: Home
+  latitude: 41.4001478
+  longitude: -73.0738810
+  radius: 75
+  icon: mdi:home
+  
+- name: Meghann Work
+  latitude: 41.1967152
+  longitude: -73.1359847
+  radius: 75
+  icon: mdi:school
+  
+- name: Mackenzie Scofield
+  latitude: 41.2267102
+  longitude: -73.1265940
+  radius: 75
+  icon: mdi:home-variant
+  
+- name: Mom Scofield
+  latitude: 41.2177618
+  longitude: -73.1893293
+  radius: 75
+  icon: mdi:home-variant

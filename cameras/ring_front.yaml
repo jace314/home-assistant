@@ -1,0 +1,4 @@
+- platform: generic
+  name: Ring Front Video
+  still_image_url: http://192.168.254.133:8123{{ states.camera.front_door_snapshot.attributes.entity_picture }}
+  stream_source: rtsp://03cabcc9-ring-mqtt:8554/54e0194e1f4b_live

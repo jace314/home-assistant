@@ -1,0 +1,23 @@
+- platform: template
+  sensors:
+    first_alert_status:
+      friendly_name: 'First Alert Status'
+      value_template: >-
+        {% if is_state("sensor.first_alert_alarmlevel", "255") and is_state("sensor.first_alert_alarmtype", "1")%}
+          Smoke!
+        {% elif is_state("sensor.first_alert_alarmlevel", "255") and is_state("sensor.first_alert_alarmtype", "2")%}
+          CO!
+        {% elif is_state("sensor.first_alert_alarmlevel", "0") and is_state("sensor.first_alert_alarmtype", "12")%}
+          Testing
+        {% else %}
+          OK
+        {% endif %}
+      icon_template: >-
+        {% if is_state("sensor.first_alert_alarmlevel", "255") and is_state("sensor.first_alert_alarmtype", "1")%}
+          mdi:fire
+        {% elif is_state("sensor.first_alert_alarmlevel", "255") and is_state("sensor.first_alert_alarmtype", "2")%}
+          mdi:cloud-outline
+        {% else %}
+          mdi:smoke-detector
+        {% endif %}
+      

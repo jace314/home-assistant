@@ -1,0 +1,16 @@
+# Living Room Lights
+living_lights:
+  name: Living Lights
+  entities:
+    - light.hue_lightstrip
+    - light.floor_lamp
+    - light.lifx_living_ceiling
+    - switch.living_shelf_lights
+
+# Living Fans
+living_fans:
+  name: Living Fans
+  entities:
+    - switch.wyze_shelf_fan
+    - switch.wyze_window_fan
+    

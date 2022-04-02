@@ -27,9 +27,11 @@ zone: !include zones.yaml
 # Text to speech
 tts:
   - platform: google_translate
-
+  
+# Media
 media_source:
 
+# Alarm
 alarm_control_panel:
   - platform: manual
 

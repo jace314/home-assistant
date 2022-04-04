@@ -357,11 +357,13 @@
     device_id: 02522e0509104c229d8fb9005d09ebfb
     entity_id: light.hue_filament
     domain: light
-  - condition: or
+  - condition: and
     conditions:
-    - condition: state
-      entity_id: light.stairs_spots
-      state: 'on'
+    - condition: or
+      conditions:
+      - condition: state
+        entity_id: light.stairs_spots
+        state: 'on'
   action:
   - service: light.turn_off
     data: {}

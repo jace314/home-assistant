@@ -387,3 +387,16 @@
     entity_id: light.hue_kitchen_ceiling
     domain: light
   mode: single
+- id: '1649128160763'
+  alias: GitHub HA Backup
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:45:00'
+  condition: []
+  action:
+  - service: hassio.addon_stdin
+    data:
+      addon: a0d7b954_ssh
+      input: /config/ha_gitpush.sh
+  mode: single

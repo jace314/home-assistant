@@ -13,7 +13,7 @@ panel_custom:
     config:
       ingress: core_configurator
 
-# Includes
+# Includes All the files needed
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml

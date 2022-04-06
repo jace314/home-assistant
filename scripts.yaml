@@ -10,3 +10,20 @@ tts_test:
       target: media_player.jace_echo_flex
       data:
         type: tts
+'1649203478009':
+  alias: Confirmable Notification
+  use_blueprint:
+    path: homeassistant/confirmable_notification.yaml
+    input:
+      notify_device: d4e2d8bc2d5adad310e6b312ded9554f
+      title: Start
+      message: Press to start or stop fans
+      confirm_action:
+      - type: toggle
+        device_id: 1ec94407e4bd52072b602bad620143d3
+        entity_id: switch.kids_window_lights
+        domain: switch
+      - type: toggle
+        device_id: e029469d81739cc0aee5d2225f36164a
+        entity_id: switch.kids_ceiling
+        domain: switch

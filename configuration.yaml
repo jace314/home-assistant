@@ -1,6 +1,8 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+homeassistant:
+  packages: !include_dir_named packages/
 
 # Includes All the files needed
 automation: !include automations.yaml
@@ -12,6 +14,7 @@ group: !include_dir_merge_named groups/
 sensor: !include_dir_merge_list sensors/
 camera: !include_dir_merge_named cameras/
 zone: !include zones.yaml
+
 
 # Text to speech
 tts:

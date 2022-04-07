@@ -1,6 +1,7 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+#testing again to see if auto backup
 homeassistant:
   packages: !include_dir_named packages/
 

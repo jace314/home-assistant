@@ -324,7 +324,7 @@
   condition:
   - condition: sun
     after: sunset
-    after_offset: 00:10:00
+    after_offset: -00:10:00
   action:
   - type: turn_on
     device_id: 02522e0509104c229d8fb9005d09ebfb
@@ -397,6 +397,6 @@
   action:
   - service: hassio.addon_stdin
     data:
-      addon: core_ssh
+      addon: a0d7b954-ssh
       input: /config/ha_gitpush.sh
   mode: single

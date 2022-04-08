@@ -45,7 +45,7 @@
   action:
   - type: toggle
     device_id: e5c2bc150613013fc017fdec4e88859d
-    entity_id: switch.ikea_outlet_on_off
+    entity_id: switch.ikea_living_ac_on_off
     domain: switch
   mode: single
 - id: '1647823096364'
@@ -379,7 +379,7 @@
     domain: zha
     platform: device
     type: remote_button_short_press
-    subtype: dim_up
+    subtype: dim_down
   condition: []
   action:
   - type: toggle

@@ -1,12 +1,9 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-#testing again to see if auto backup
-#another test for the github
-#after 8 oclock
-
 homeassistant:
   packages: !include_dir_named packages/
+  customize: !include customize.yaml
 
 # Includes All the files needed
 automation: !include automations.yaml
@@ -64,11 +61,11 @@ http:
     - 172.30.33.0/24
     - 127.0.0.1
 
-# Integrations
-sonoff:
-  username: !secret sonoff_user
-  password: !secret sonoff_pass
+#### Integrations ####
 
+#sonoff:
+#  username: !secret sonoff_user
+#  password: !secret sonoff_pass
 
 schluter:
   username: !secret schluter_email

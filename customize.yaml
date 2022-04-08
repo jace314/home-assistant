@@ -1,0 +1,7 @@
+light.1000e8cfb3:
+  unique_id: sonoff-ilight1
+  area: dining
+  
+fan.1000e8cfb3:
+  unique_id: sonoff-ifan1
+  area: dining

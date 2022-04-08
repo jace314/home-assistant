@@ -398,5 +398,5 @@
   - service: hassio.addon_stdin
     data:
       addon: a0d7b954-ssh
-      input: sh /config/ha_gitpush.sh
+      input: /config/ha_gitpush.sh
   mode: single

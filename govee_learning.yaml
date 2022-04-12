@@ -1,5 +1,5 @@
 9D:A7:A4:C1:38:37:9F:B0:
-  set_brightness_max:
+  set_brightness_max: 100
   get_brightness_max: 100
   before_set_brightness_turn_on: false
   config_offline_is_off: false

@@ -214,8 +214,8 @@
     domain: light
     brightness_pct: 15
   - type: turn_on
-    device_id: cb6f29e7529aca81153a5afba3f1c0df
-    entity_id: switch.outside_1
+    device_id: cfffbd6f44bcd725b4319297d005f41d
+    entity_id: switch.eco_deck_switch
     domain: switch
   mode: single
 - id: '1647994807482'
@@ -262,8 +262,8 @@
     entity_id: light.hue_porch_ceiling
     domain: light
   - type: turn_off
-    device_id: cb6f29e7529aca81153a5afba3f1c0df
-    entity_id: switch.outside_1
+    device_id: cfffbd6f44bcd725b4319297d005f41d
+    entity_id: switch.eco_deck_switch
     domain: switch
   mode: single
 - id: '1648134976799'
@@ -379,7 +379,7 @@
     domain: zha
     platform: device
     type: remote_button_short_press
-    subtype: dim_down
+    subtype: left
   condition: []
   action:
   - type: toggle
@@ -398,5 +398,61 @@
   - service: hassio.addon_stdin
     data:
       addon: a0d7b954-ssh
-      input: /config/ha_gitpush.sh
+      input: bash /config/ha_gitpush.sh
+  mode: single
+- id: '1649469926628'
+  alias: Living Hue Strip Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 00:30:00
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 22c92ce079bdfd628e4c0543dda847f9
+    entity_id: light.hue_lightstrip
+    domain: light
+  mode: single
+- id: '1649470251797'
+  alias: Living Hue Strip On
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '- 00:10:00'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 22c92ce079bdfd628e4c0543dda847f9
+    entity_id: light.hue_lightstrip
+    domain: light
+    brightness_pct: 15
+  mode: single
+- id: '1649533585709'
+  alias: Bathroom Blinds Morning
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:45:00
+  condition: []
+  action:
+  - device_id: 4658ba1850b0e1ef12c15401c314e5b7
+    domain: cover
+    entity_id: cover.ikea_blind_window_covering
+    type: set_position
+    position: 60
+  mode: single
+- id: '1649533638208'
+  alias: Bathroom Blinds Night
+  description: ''
+  trigger:
+  - platform: time
+    at: '19:30:00'
+  condition: []
+  action:
+  - device_id: 4658ba1850b0e1ef12c15401c314e5b7
+    domain: cover
+    entity_id: cover.ikea_blind_window_covering
+    type: set_position
+    position: 0
   mode: single

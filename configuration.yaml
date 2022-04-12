@@ -16,6 +16,9 @@ sensor: !include_dir_merge_list sensors/
 camera: !include_dir_merge_named cameras/
 zone: !include zones.yaml
 
+shell_command:
+  git_backup: bash /config/ha_gitpush.sh
+
 # Text to speech
 tts:
   - platform: google_translate
@@ -47,12 +50,20 @@ influxdb:
   password: !secret mariadb_pass
   max_retries: 3
   default_measurement: state
-  include:
-    domains:
-      - alarm_control_panel
-      - climate
-      - sensor
-      - light
+#  include:
+#    domains:
+#      - alarm_control_panel
+#      - climate
+#      - sensor
+#      - light
+
+# Log
+logger:
+  default: fatal
+  logs:
+    homeassistant.core: error
+    custom_components.keymaster: warning
+    homeassistant.components.mqtt: warning
 
 # http
 http: 
@@ -63,9 +74,9 @@ http:
 
 #### Integrations ####
 
-#sonoff:
-#  username: !secret sonoff_user
-#  password: !secret sonoff_pass
+sonoff:
+  username: !secret sonoff_user
+  password: !secret sonoff_pass
 
 schluter:
   username: !secret schluter_email

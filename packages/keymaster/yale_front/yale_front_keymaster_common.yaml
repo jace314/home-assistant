@@ -30,6 +30,11 @@ script:
         data_template:
           title: "reset"
           message: "yale_front"
+      - service: logbook.log
+        data:
+          name: '{{ title }}'
+          entity_id: <your_lock_entity>
+          message: '{{ message }}'      
 
   keymaster_yale_front_reset_codeslot:
     mode: parallel

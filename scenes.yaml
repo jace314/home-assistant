@@ -1,0 +1,59 @@
+- id: '1651625474812'
+  name: Basement All
+  entities:
+    light.hue_basement_1:
+      supported_color_modes:
+      - brightness
+      mode: normal
+      dynamics: none
+      friendly_name: Hue Basement 1
+      supported_features: 40
+      color_mode: brightness
+      brightness: 255
+      state: 'on'
+    light.hue_basement_2:
+      effect_list:
+      - None
+      - candle
+      supported_color_modes:
+      - brightness
+      mode: normal
+      dynamics: none
+      friendly_name: Hue Basement 2
+      supported_features: 44
+      color_mode: brightness
+      brightness: 255
+      effect: None
+      state: 'on'
+    light.ikea_bulb_ceiling_level_light_color_on_off:
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      off_brightness:
+      friendly_name: Ikea Bulb Ceiling level, light_color, on_off
+      supported_features: 43
+      color_mode: color_temp
+      brightness: 254
+      color_temp: 364
+      hs_color:
+      - 28.295
+      - 64.242
+      rgb_color:
+      - 255
+      - 168
+      - 91
+      xy_color:
+      - 0.521
+      - 0.387
+      state: 'on'
+    light.ikea_of_sweden_tradfri_bulb_e26_opal_1000lm_502e4cfe_level_on_off:
+      supported_color_modes:
+      - brightness
+      off_brightness:
+      friendly_name: IKEA of Sweden TRADFRI bulb E26 opal 1000lm 502e4cfe level, on_off
+      supported_features: 41
+      color_mode: brightness
+      brightness: 254
+      state: 'on'
+  icon: mdi:ceiling-light-multiple

@@ -1,0 +1,37 @@
+basement:
+  floor: 3 Lower
+  icon: mdi:washing-machine
+bathroom:
+  floor: 2 Second
+  grouped_sort_order: 2
+  icon: mdi:paper-roll
+dining:
+  floor: 1 First
+  grouped_sort_order: 3
+  icon: mdi:table-chair
+kids_room:
+  floor: 2 Second
+  grouped_sort_order: 4
+  icon: mdi:bed-double
+kitchen:
+  floor: 1 First
+  grouped_sort_order: 2
+  icon: mdi:countertop
+living_room:
+  floor: 1 First
+  grouped_sort_order: 1
+  icon: mdi:sofa
+master:
+  floor: 2 Second
+  grouped_sort_order: 3
+  icon: mdi:bed-king
+outside:
+  icon: mdi:car-estate
+  floor: ''
+settings:
+  floor: 4 Setting
+  icon: mdi:card-bulleted-settings
+stairs:
+  floor: 2 Second
+  grouped_sort_order: 1
+  icon: mdi:stairs

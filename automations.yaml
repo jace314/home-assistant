@@ -116,16 +116,10 @@
     domain: switch
   condition: []
   action:
-  - service: light.turn_on
-    data:
-      color_temp: 315
-      brightness_pct: 100
+  - service: scene.turn_on
     target:
-      device_id:
-      - e2c57d7a1f2dd7dff2280769680471db
-      - d532c6e5e10cec4981bc8bfc84195495
-      - 73154c5d5c1a8394de2dcf01b7f0ff3b
-      - a27b742da5f12feb52cb4b654196ea17
+      entity_id: scene.basement_all
+    metadata: {}
   mode: single
 - id: '1647830838415'
   alias: Basement Off

@@ -9,6 +9,10 @@ dining:
   floor: 1 First
   grouped_sort_order: 3
   icon: mdi:table-chair
+entrance:
+  icon: ''
+  floor: ''
+  disabled: true
 kids_room:
   floor: 2 Second
   grouped_sort_order: 4
@@ -25,9 +29,13 @@ master:
   floor: 2 Second
   grouped_sort_order: 3
   icon: mdi:bed-king
-outside:
-  icon: mdi:car-estate
+not_used:
+  disabled: true
   floor: ''
+  icon: ''
+outside:
+  floor: ''
+  icon: mdi:car-estate
 settings:
   floor: 4 Setting
   icon: mdi:card-bulleted-settings

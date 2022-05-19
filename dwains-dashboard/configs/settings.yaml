@@ -1,4 +1,5 @@
+alarm_entity: alarm_control_panel.ha_alarm
 disable_clock: false
 disable_welcome_message: false
+v2_mode: false
 weather_entity: weather.home
-alarm_entity: alarm_control_panel.ha_alarm

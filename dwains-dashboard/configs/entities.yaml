@@ -1,0 +1,16 @@
+binary_sensor.aeotec_siren_power_management_replace_battery_soon_3:
+  hidden: true
+binary_sensor.aeotec_siren_power_management_replace_battery_soon_4:
+  hidden: true
+binary_sensor.aeotec_siren_power_management_replace_battery_soon_5:
+  hidden: true
+binary_sensor.yale_lock_access_control_lock_jammed:
+  hidden: true
+climate.ecobee_thermostat:
+  custom_popup: true
+light.lifx_living_ceiling:
+  hidden: true
+light.light:
+  hidden: true
+lock.yale_lock_frontdoor:
+  favorite: true

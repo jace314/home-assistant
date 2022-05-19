@@ -328,7 +328,7 @@
   - service: light.turn_on
     data:
       color_temp: 240
-      brightness_pct: 50
+      brightness_pct: 25
     target:
       entity_id: light.stairs_spots
   mode: single

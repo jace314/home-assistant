@@ -141,21 +141,6 @@
       - 73154c5d5c1a8394de2dcf01b7f0ff3b
       - a27b742da5f12feb52cb4b654196ea17
   mode: single
-- id: '1647831098824'
-  alias: Living Fans Off
-  description: ''
-  trigger:
-  - platform: time
-    at: 07:15:00
-  condition: []
-  action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      device_id:
-      - 4091b1e5500f4baa73a43f1383679145
-      - d38ec57754412930d56968d2a71ea8c5
-  mode: single
 - id: '1647831192671'
   alias: Shelf Lights Off
   description: ''
@@ -199,7 +184,7 @@
   trigger:
   - platform: sun
     event: sunset
-    offset: '- 00:10:00'
+    offset: '- 00:15:00'
   condition: []
   action:
   - type: turn_on
@@ -208,8 +193,8 @@
     domain: light
     brightness_pct: 15
   - type: turn_on
-    device_id: cfffbd6f44bcd725b4319297d005f41d
-    entity_id: switch.eco_deck_switch
+    device_id: d3c69e67c842f4c26c42d6e1255e13b2
+    entity_id: switch.deck_cafe_lights
     domain: switch
   mode: single
 - id: '1647994807482'
@@ -256,8 +241,8 @@
     entity_id: light.hue_porch_ceiling
     domain: light
   - type: turn_off
-    device_id: cfffbd6f44bcd725b4319297d005f41d
-    entity_id: switch.eco_deck_switch
+    device_id: d3c69e67c842f4c26c42d6e1255e13b2
+    entity_id: switch.deck_cafe_lights
     domain: switch
   mode: single
 - id: '1648134976799'
@@ -480,4 +465,77 @@
   action:
   - event: ''
     event_data: {}
+  mode: single
+- id: '1653526742468'
+  alias: Living Fans Off
+  description: ''
+  trigger:
+  - platform: time
+    at: 07:10:00
+  condition:
+  - condition: time
+    before: 08:00:00
+    after: 07:00:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - device_id: 4091b1e5500f4baa73a43f1383679145
+    domain: fan
+    entity_id: fan.wyze_shelf_fan
+    type: turn_off
+  - device_id: d38ec57754412930d56968d2a71ea8c5
+    domain: fan
+    entity_id: fan.wyze_window_fan
+    type: turn_off
+  mode: single
+- id: '1653697588822'
+  alias: Kids AC Control
+  description: ''
+  trigger:
+  - device_id: b876525c719bdbcf93e3da2da4c5eb2d
+    domain: zha
+    platform: device
+    type: device_rotated
+    subtype: right
+  - device_id: b876525c719bdbcf93e3da2da4c5eb2d
+    domain: zha
+    platform: device
+    type: device_rotated
+    subtype: left
+  condition: []
+  action:
+  - type: toggle
+    device_id: d45270a0c02aa136c7fba7b5085952df
+    entity_id: switch.ikea_kids_ac_on_off
+    domain: switch
+  mode: single
+- id: '1657157286786'
+  alias: Pool Pump On
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 47c9e7ee00cdbbd2cf7c6b16d4800121
+    entity_id: switch.pool_pump
+    domain: switch
+  mode: single
+- id: '1657157402153'
+  alias: Pool Pump Off
+  description: ''
+  trigger:
+  - platform: time
+    at: '12:00:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 47c9e7ee00cdbbd2cf7c6b16d4800121
+    entity_id: switch.pool_pump
+    domain: switch
   mode: single

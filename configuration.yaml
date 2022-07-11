@@ -63,7 +63,7 @@ influxdb:
 
 # Log
 logger:
-  default: fatal
+  default: warning
   logs:
     homeassistant.core: error
     custom_components.keymaster: warning
@@ -75,6 +75,12 @@ http:
   trusted_proxies: 
     - 172.30.33.0/24
     - 127.0.0.1
+
+# Bluetooth
+device_tracker:
+  - platform: bluetooth_tracker
+    new_device_defaults:
+      track_new_devices: true
 
 #### Integrations ####
 
